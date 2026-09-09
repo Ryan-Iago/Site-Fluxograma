@@ -106,22 +106,21 @@ section {
 .btn-secondary:hover {
   background-color: #333;
 }
-
-/* Fluxograma Box */
+/* Ajuste do container e do tamanho do fluxograma */
 .mermaid-box {
   background-color: #fafafa;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 15px;
+  padding: 20px;
   margin-top: 15px;
-  overflow-x: auto;
+  overflow-x: auto; /* Permite rolagem horizontal se necessário */
   display: flex;
   justify-content: center;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #a5d6a7;
-  font-size: 0.9rem;
+/* Força o SVG do Mermaid a ocupar mais espaço */
+.mermaid-box svg {
+  width: 100% !important;
+  max-width: 800px; /* Aumente este valor se quiser ainda maior */
+  height: auto !important;
 }
