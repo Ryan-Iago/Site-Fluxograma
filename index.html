@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA pelo Meio Ambiente</title>
+  
+  <!-- Estilos base do projeto -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Biblioteca Mermaid para renderizar o Fluxograma -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'forest' });
+  </script>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="container">
+      <h1>🌱 IA pelo Meio Ambiente</h1>
+      <p>Como a Inteligência Artificial auxilia o ser humano na preservação do planeta</p>
+    </div>
+  </header>
+
+  <!-- Navegação Principal -->
+  <nav>
+    <a href="#introducao">Introdução</a>
+    <a href="#fluxograma">Fluxograma / Rotas</a>
+    <a href="#solucoes">Soluções</a>
+  </nav>
+
+  <main class="container">
+
+    <!-- Seção de Introdução -->
+    <section id="introducao">
+      <h2>O Papel da IA na Sustentabilidade</h2>
+      <p>
+        A Inteligência Artificial tornou-se uma ferramenta indispensável para monitorar,
+        prever e combater os impactos das mudanças climáticas. Combinando big data, aprendizado de máquina
+        e automação, a IA capacita pesquisadores e governos a tomarem decisões mais rápidas e eficientes.
+      </p>
+    </section>
+
+    <!-- Seção do Fluxograma de Rotas -->
+    <section id="fluxograma">
+      <h2>Fluxograma de Ação: IA & Meio Ambiente</h2>
+      <p>Escolha um dos caminhos abaixo no diagrama para entender a atuação da IA em diferentes áreas:</p>
+
+      <div class="mermaid-box">
+        <pre class="mermaid">
+          flowchart TD
+            A[Desafio Ambiental Detectado] --> B{Qual o foco da intervenção?}
+            
+            %% ROTA 1: Monitoramento e Prevenção
+            B -->|Rota 1: Monitoramento & Prevenção| C[Coleta de Dados de Imagens de Satélite]
+            C --> D[Análise de Visão Computacional]
+            D --> E{O que foi detectado?}
+            E -->|Desmatamento Ilegal| F[Alerta para Autoridades Ambientais]
+            E -->|Foco de Incêndio| G[Acionamento de Brigadas de Incêndio]
+            F --> H[Preservação de Biomas Protegidos]
+            G --> H
+
+            %% ROTA 2: Gestão de Recursos & Sustentabilidade
+            B -->|Rota 2: Gestão de Recursos| I[Sensores IoT na Infraestrutura Urbana/Rural]
+            I --> J[Modelos de Aprendizado de Máquina]
+            J --> K{Qual o objetivo?}
+            K -->|Rede Elétrica| L[Otimização do Uso de Energia Limpa]
+            K -->|Agricultura| M[Irrigação de Precisão e Redução de Pesticidas]
+            L --> N[Redução da Pegada de Carbono e Resíduos]
+            M --> N
+        </pre>
+      </div>
+    </section>
+
+    <!-- Seção de Soluções Detalhadas -->
+    <section id="solucoes">
+      <h2>Detalhamento das Rotas</h2>
+      
+      <div class="card-grid">
+        <div class="card">
+          <h3>🛰️ Rota 1: Monitoramento & Prevenção</h3>
+          <p>
+            Processamento de imagens de satélite e dados de radar em tempo real para identificar padrões
+            de degradação florestal e focos de calor antes que os danos sejam irreversíveis.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>⚡ Rota 2: Gestão de Recursos</h3>
+          <p>
+            Algoritmos inteligentes preveem a demanda energética e otimizam a distribuição de água na agricultura,
+            evitando o desperdício de recursos naturais essenciais.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>Projeto de código aberto desenvolvido para o GitHub • Proteção Ambiental com IA</p>
+  </footer>
+
+</body>
+</html>
