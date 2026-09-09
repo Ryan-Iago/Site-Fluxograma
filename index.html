@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IA pelo Meio Ambiente</title>
+  <title>EcoQuest: IA pelo Meio Ambiente</title>
   
-  <!-- Estilos base do projeto -->
   <link rel="stylesheet" href="style.css" />
   
-  <!-- Biblioteca Mermaid para renderizar o Fluxograma -->
+  <!-- Mermaid.js para renderizar o fluxograma -->
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
     mermaid.initialize({ startOnLoad: true, theme: 'forest' });
@@ -16,93 +15,81 @@
 </head>
 <body>
 
-  <!-- Cabeçalho -->
   <header>
     <div class="container">
-      <h1>🌱 IA pelo Meio Ambiente</h1>
-      <p>Como a Inteligência Artificial auxilia o ser humano na preservação do planeta</p>
+      <h1>🎮 EcoQuest: Operação IA Ecológica</h1>
+      <p>Assuma o controle do Sistema de IA e tome decisões para proteger o planeta!</p>
     </div>
   </header>
 
-  <!-- Navegação Principal -->
-  <nav>
-    <a href="#introducao">Introdução</a>
-    <a href="#fluxograma">Fluxograma / Rotas</a>
-    <a href="#solucoes">Soluções</a>
-  </nav>
-
   <main class="container">
 
-    <!-- Seção de Introdução -->
-    <section id="introducao">
-      <h2>O Papel da IA na Sustentabilidade</h2>
-      <p>
-        A Inteligência Artificial tornou-se uma ferramenta indispensável para monitorar,
-        prever e combater os impactos das mudanças climáticas. Combinando big data, aprendizado de máquina
-        e automação, a IA capacita pesquisadores e governos a tomarem decisões mais rápidas e eficientes.
-      </p>
+    <!-- Área do Jogo -->
+    <section id="game-container">
+      <div class="status-bar">
+        <span><b>Missão:</b> Salvar o Ecossistema</span>
+        <span><b>Pontos de Impacto:</b> <span id="score">100</span>%</span>
+      </div>
+
+      <div id="story-box">
+        <h2 id="step-title">Alerta Ambiental!</h2>
+        <p id="step-description">
+          O sistema central detectou anomalias graves no planeta. Para intervir, escolha em qual área a IA deve focar suas operações agora:
+        </p>
+
+        <!-- Botões de escolha que mudam dinamicamente via JS -->
+        <div id="choices" class="choice-grid">
+          <button class="btn-choice" onclick="makeChoice('rota1')">
+            🛰️ Rota 1: Monitoramento & Prevenção (Satélites e Sensores)
+          </button>
+          <button class="btn-choice" onclick="makeChoice('rota2')">
+            ⚡ Rota 2: Gestão de Recursos (Cidades e Agricultura)
+          </button>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="btn-restart" onclick="restartGame()" class="btn-secondary" style="display: none;">
+          🔄 Reiniciar Simulação
+        </button>
+      </div>
     </section>
 
-    <!-- Seção do Fluxograma de Rotas -->
+    <!-- Fluxograma Dinâmico -->
     <section id="fluxograma">
-      <h2>Fluxograma de Ação: IA & Meio Ambiente</h2>
-      <p>Escolha um dos caminhos abaixo no diagrama para entender a atuação da IA em diferentes áreas:</p>
+      <h2>📊 Mapa das Decisões (Fluxograma)</h2>
+      <p>Abaixo está o mapa visual das escolhas disponíveis no jogo:</p>
 
       <div class="mermaid-box">
         <pre class="mermaid">
           flowchart TD
-            A[Desafio Ambiental Detectado] --> B{Qual o foco da intervenção?}
+            A[🚨 Desafio Ambiental Detectado] --> B{Escolha a Rota da IA}
             
-            %% ROTA 1: Monitoramento e Prevenção
-            B -->|Rota 1: Monitoramento & Prevenção| C[Coleta de Dados de Imagens de Satélite]
-            C --> D[Análise de Visão Computacional]
-            D --> E{O que foi detectado?}
-            E -->|Desmatamento Ilegal| F[Alerta para Autoridades Ambientais]
-            E -->|Foco de Incêndio| G[Acionamento de Brigadas de Incêndio]
-            F --> H[Preservação de Biomas Protegidos]
-            G --> H
+            %% Rota 1
+            B -->|Rota 1| C[🛰️ Análise de Imagens de Satélite]
+            C --> D{O que foi identificado?}
+            D -->|Desmatamento| E[🚨 Alerta enviado para Autoridades]
+            D -->|Foco de Incêndio| F[👨‍🚒 Brigadas Acionadas]
+            E --> G[🌳 Bioma Preservado!]
+            F --> G
 
-            %% ROTA 2: Gestão de Recursos & Sustentabilidade
-            B -->|Rota 2: Gestão de Recursos| I[Sensores IoT na Infraestrutura Urbana/Rural]
-            I --> J[Modelos de Aprendizado de Máquina]
-            J --> K{Qual o objetivo?}
-            K -->|Rede Elétrica| L[Otimização do Uso de Energia Limpa]
-            K -->|Agricultura| M[Irrigação de Precisão e Redução de Pesticidas]
-            L --> N[Redução da Pegada de Carbono e Resíduos]
-            M --> N
+            %% Rota 2
+            B -->|Rota 2| H[⚡ Sensores IoT Conectados]
+            H --> I{Qual a prioridade?}
+            I -->|Rede Elétrica| J[🔋 Otimização de Energia Limpa]
+            I -->|Agricultura| K[🌾 Irrigação de Precisão]
+            J --> L[🌍 Emissões Reduzidas!]
+            K --> L
         </pre>
-      </div>
-    </section>
-
-    <!-- Seção de Soluções Detalhadas -->
-    <section id="solucoes">
-      <h2>Detalhamento das Rotas</h2>
-      
-      <div class="card-grid">
-        <div class="card">
-          <h3>🛰️ Rota 1: Monitoramento & Prevenção</h3>
-          <p>
-            Processamento de imagens de satélite e dados de radar em tempo real para identificar padrões
-            de degradação florestal e focos de calor antes que os danos sejam irreversíveis.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>⚡ Rota 2: Gestão de Recursos</h3>
-          <p>
-            Algoritmos inteligentes preveem a demanda energética e otimizam a distribuição de água na agricultura,
-            evitando o desperdício de recursos naturais essenciais.
-          </p>
-        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Rodapé -->
   <footer>
-    <p>Projeto de código aberto desenvolvido para o GitHub • Proteção Ambiental com IA</p>
+    <p>EcoQuest • Projeto do GitHub • Apresentando a IA na Proteção do Meio Ambiente</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
